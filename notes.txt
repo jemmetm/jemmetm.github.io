@@ -1,0 +1,125 @@
+EMCEV Website - Personal Notes
+=============================
+
+Items to Include:
+-Everything interesting in project ideas, knock off list, just do them and get rid
+-Mission statement about curiosity to learn, love to create art, engineer
+-Resume, potentially interactive with links to make it cool and pretty, + download
+-Coding: gravity simulation if cleaned up, do Matlab projects like 21254 just personal
+-Math: channel, papers with Latex 
+-Product Research: Spectral
+-Graphic Design work: 3rdEye (3d model) and everything on the google doc for it, misc as well (can do collection black and white, where various fade in with color in and out), you can click on one and it shows enlarged and caption, also when you hover it colors it. underneath: irrev vibe code, pretty blue print, photoshop stuff. for 3rd eye: two logo animations, one where it traces the path then forms, also where it floats apart, spins, then comes together in other orientation. Finally, for image gallery, have some sprite travelling from image to image which lights up the images. Could be some path displayed, or random un shown. Show the code below for it, also for the logos if there is, so its an integrated tech website. Also cool when the logo flashes big on screen, imagine it flies towards and you go through the eye and then you at website
+
+-Dawn Accipiter
+-Photography (have to get into it)
+-other creations (Build18)
+-OnlyOdds
+-Personal Thoughts: sleep, tech health, etc. a list of various personal thoughts on the world
+-Computer with rails concept
+
+Dawn Accipiter Notes:
+-the top is the YT video and then also a general description
+-underneath is inspiration (greebling wire photos, birds, the two star wars ships ), process
+-photo gallery, generation build and instructions
+-have downloads for files, etc. make open source
+
+TODO ITEMS:
+- [ ] Add more blog posts to thoughts.html
+- [ ] Complete DawnAccipiter project details
+- [ ] Complete Spectral project details
+- [ ] Complete OnlyOdds project details
+- [ ] Add actual project links when ready
+- [ ] Consider adding a portfolio gallery
+- [ ] Add contact form functionality
+- [ ] add blender animations for Dawn Accipiter gear trains (this is if I really have spare time, low priority)
+
+IDEAS FOR FUTURE:
+- Add a projects overview page
+- Create individual blog post pages
+- Add search functionality to blog
+- Consider adding a newsletter signup
+- Add social media links
+- Create a sitemap
+
+TECHNICAL NOTES:
+- All pages use cache-busting (?v=2) for CSS
+- EMCEV logo is left-aligned and links to home
+- Responsive design for mobile devices
+- Consistent navigation across all pages
+- Dark theme throughout
+
+
+PERSONAL NOTES:
+- This is my professional portfolio website
+- Focus on clean, modern design
+- Emphasize technical skills and projects
+- Blog section for sharing thoughts and opinions
+- Keep it professional but personal
+-less words, more visual. Use visual medium because you can
+-show, don't tell, not a blog (yawn), keep it sleek
+-give enough so they are intrigued and can imagine
+-don't brag, present the facts in a manner that is chill and calm but impressive
+-make dope shit. be chill, and make epic shit. trust the process
+-trust if you live right more will come, don't grip onto the past, or previous things
+-I always get to where I’m going by walking away from where I have been.”
+ ― Winnie the Pooh
+
+
+
+Clean and Delete:
+
+Math pdfs of work
+
+mission statement about curiosity to learn, love to create art, and engineer
+
+Gravity Simulation Project
+
+Math channel
+
+Product research (Spectral)
+
+graphic design work (Third Eye, other things as fit)
+
+writing, potentially if solid
+
+Dawn Accipiter
+
+clay sculptures
+
+photography
+
+other creations as I see fit, make it inspiring
+
+potentially have miscellaneous section, but only if it stays clean and does not undermine
+
+group things at CMU and beyond, people want to see that I can do that, and that is where awesome shit is made. Personal projects is vital and important, but get meet people collaborate
+
+some thoughts on society (free to change as time goes), nothing anarchist crazy or extreme, just well tempered reflections about my life, society, how things are changing, and how things should change so that the world is a good place and I am happy, phone use, food policies, how work sector changing and purpose is vanishing etc
+
+
+
+
+Not “an engineer” i love to create, thats a means to an end, problem solve maybe
+
+The app
+
+The computer with rails idea, all ideas for products on here
+
+https://www.desmos.com/calculator/940d21e445 
+
+Proposal if its solid the tech smartphone one. 
+
+This will be here. You can always add your ideas and things you do, it will not go anywhere, so you are always adding to the portfolio, do not worry. Go out in the world and do awesome stuff, don’t let things fester though just do it and then you can make the website. Just check in to add cool ideas when you get the chance. 
+
+https://pow.kim/ inspo
+
+https://www.youtube.com/@TwoMinutePapers/videos inspo
+
+https://chatgpt.com/c/68d832e3-d784-8327-b667-6ea65d953b39 
+
+I NEED to make the poster, make the rail thing, and just put it on web, collect, the app will be fall break, get rid of all those will do, and just start doing and putting on. Various hobby areas, even film or writing
+
+I need to recreate the matlab projects but my own, so that yeah i come up with, then I solve, equal hardness as the assigned projects, but more real and way cooler, (the matlab projects were dope tho)
+
+
+its time to get sick at modeling, coding, design, art, yeah. the oxo spinner, programming for mathworks, making awesome, and SLEEPING FUCK FOR FUCK SAKE, lowk the quick solidworks animation wouldnt be waste of time, practice with gear.

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DawnAccipiter - Project Details and Development">
+    <title>DawnAccipiter - Emmet McEvilley</title>
+    <link rel="icon" type="image/png" href="assets/images/icon2.png">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <a href="index.html" style="text-decoration: none; color: #000000;">
+                        <img src="assets/images/logo2.png" alt="EMCEV Logo" />
+                    </a>
+                </div>
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="projects.html" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contact" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="thoughts.html" class="nav__link">Thoughts</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="resume.html" class="nav__link">Resume</a>
+                    </li>
+                </ul>
+                <div class="nav__toggle" id="nav-toggle">
+                    <span class="nav__hamburger"></span>
+                    <span class="nav__hamburger"></span>
+                    <span class="nav__hamburger"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="container">
+                <div class="project-hero__content">
+                    <h1 class="project-hero__title">The Dawn Accipiter</h1>
+                </div>
+                <div class="video-content">
+                    <div class="video-text">
+                        <p class="video-description">
+                            People got through the pandemic in various ways. I spent much of it trying to design a LEGO<sup>&reg;</sup> spaceship that felt unique yet undeniably <em>Star Wars</em>—where neither the look nor the mechanisms compromised the other. After a year of experimenting, designing, building, and revising, I completed what you see here. All part files are available below.
+                        </p>
+                    </div>
+                    <div class="video-container">
+                        <iframe 
+                            width="100%" 
+                            height="400" 
+                            src="https://www.youtube.com/embed/g9K7Zqy4aQ4" 
+                            title="The Dawn Accipiter Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="inspiration-section">
+            <div class="container">
+                <h2 class="inspiration-title">Inspiration and Design</h2>
+                <div class="inspiration-gallery">
+                    <div class="inspiration-image" onclick="openModal('assets/images/millenium.png', 'Millennium Falcon')">
+                        <img src="assets/images/millenium.png" alt="Millennium Falcon" />
+                    </div>
+                    <div class="inspiration-image" onclick="openModal('assets/images/imperialshuttle.png', 'Imperial Shuttle')">
+                        <img src="assets/images/imperialshuttle.png" alt="Imperial Shuttle" />
+                    </div>
+                    <div class="inspiration-image" onclick="openModal('assets/images/bird.png', 'Bird')">
+                        <img src="assets/images/bird.png" alt="Bird" />
+                    </div>
+                    <div class="inspiration-image" onclick="openModal('assets/images/city.png', 'City')">
+                        <img src="assets/images/city.png" alt="City" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-mode-section">
+            <div class="container">
+              <h2 class="digital-mode-title">Digital Model</h2>
+              <div class="digital-mode-video" onclick="openVideoModal()">
+                <video 
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="metadata"
+                  style="width: 100%; height: auto; border-radius: 12px; background: #000; cursor: pointer;"
+                  onerror="console.log('Video error:', this.error); this.style.background='#ff0000';"
+                  onloadstart="console.log('Video loading started');"
+                  oncanplay="console.log('Video can play');"
+                  onloadeddata="console.log('Video data loaded');"
+                  oncanplaythrough="console.log('Video can play through');"
+                >
+                  <source src="assets/images/buildBig.mp4" type="video/mp4" />
+                  <source src="assets/images/buildSmaller-1.mp4" type="video/mp4" />
+                  <source src="assets/images/buildvid.mp4" type="video/mp4" />
+                  <div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; text-align: center; background: #333;">
+                    <div>
+                      <div style="font-size: 3rem; margin-bottom: 1rem;">🎬</div>
+                      <h3 style="color: #e44d25; margin-bottom: 0.5rem;">Video Not Supported</h3>
+                      <p style="color: #ccc; margin: 0;">Click play button to test</p>
+                    </div>
+                  </div>
+                </video>
+              </div>
+            </div>
+          </section>
+
+        <section class="photos-section">
+            <div class="container">
+                <h2 class="photos-title">Photos and Renderings</h2>
+                <div class="photos-gallery">
+                    <div class="photo-item" onclick="openModal('assets/images/331.png', 'Dawn Accipiter Render 1')">
+                        <img src="assets/images/331.png" alt="Dawn Accipiter Render 1" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/400.png', 'Dawn Accipiter Photo 1')">
+                        <img src="assets/images/400.png" alt="Dawn Accipiter Photo 1" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/332.png', 'Dawn Accipiter Render 2')">
+                        <img src="assets/images/332.png" alt="Dawn Accipiter Render 2" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/401.png', 'Dawn Accipiter Photo 2')">
+                        <img src="assets/images/401.png" alt="Dawn Accipiter Photo 2" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/333.png', 'Dawn Accipiter Render 3')">
+                        <img src="assets/images/333.png" alt="Dawn Accipiter Render 3" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/402.png', 'Dawn Accipiter Photo 3')">
+                        <img src="assets/images/402.png" alt="Dawn Accipiter Photo 3" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/334.png', 'Dawn Accipiter Render 4')">
+                        <img src="assets/images/334.png" alt="Dawn Accipiter Render 4" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/403.png', 'Dawn Accipiter Photo 4')">
+                        <img src="assets/images/403.png" alt="Dawn Accipiter Photo 4" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/335.png', 'Dawn Accipiter Render 5')">
+                        <img src="assets/images/335.png" alt="Dawn Accipiter Render 5" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/404.png', 'Dawn Accipiter Photo 5')">
+                        <img src="assets/images/404.png" alt="Dawn Accipiter Photo 5" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/336.png', 'Dawn Accipiter Photo 6')">
+                        <img src="assets/images/336.png" alt="Dawn Accipiter Photo 6" />
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/337.png', 'Dawn Accipiter Photo 7')">
+                        <img src="assets/images/337.png" alt="Dawn Accipiter Photo 7" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mechanisms-section">
+            <div class="container">
+                <h2 class="mechanisms-title">Mechanisms</h2>
+                <div class="mechanisms-gallery">
+                    <div class="photo-item" onclick="openModal('assets/images/r2_head_mechanism.png', 'Head Mechanism')">
+                        <img src="assets/images/r2_head_mechanism.png" alt="R2-D2 Head Mechanism">
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/r2_wing_feet_mechanism.png', 'Wing Feet Mechanism')">
+                        <img src="assets/images/r2_wing_feet_mechanism.png" alt="R2-D2 Wing Feet Mechanism">
+                    </div>
+                    <div class="photo-item" onclick="openModal('assets/images/r2_board_ramp_mechanism.png', 'Boarding Ramp Mechanism')">
+                        <img src="assets/images/r2_board_ramp_mechanism.png" alt="R2-D2 Board Ramp Mechanism">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-files-section">
+            <div class="container">
+                <h2 class="digital-files-title">Digital Files</h2>
+                <div class="digital-files-grid">
+                    <div class="digital-file-item">
+                        <h3 class="file-title">Stud.io CAD File</h3>
+                        <a href="assets/images/DAWNACCIPITER.io" download class="file-download-link">
+                            <div class="file-placeholder">
+                                <img src="assets/images/cadfile.png" alt="CAD File Preview">
+                                <div class="download-overlay">
+                                    <i class="fas fa-download download-icon" style="font-weight: 900;"></i>
+                                    <p class="download-text">Click to Download</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="digital-file-item">
+                        <h3 class="file-title">PDF Instructions File</h3>
+                        <a href="assets/images/DAWNACCIPITER.pdf" download class="file-download-link">
+                            <div class="file-placeholder">
+                                <img src="assets/images/instructionfile.png" alt="Instructions Preview">
+                                <div class="download-overlay">
+                                    <i class="fas fa-download download-icon" style="font-weight: 900;"></i>
+                                    <p class="download-text">Click to Download</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3>MCEV</h3>
+                    <p>Portfolio and development projects.</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="resume.html">Resume</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer__column">
+                        <h4>Projects</h4>
+                        <ul>
+                            <li><a href="dawnaccipiter.html">DawnAccipiter</a></li>
+                            <li><a href="spectral.html">Spectral</a></li>
+                            <li><a href="onlyodds.html">OnlyOdds</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Emmet McEvilley. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-nav">
+            <span class="nav-arrow prev" onclick="previousImage()">‹</span>
+            <span class="nav-arrow next" onclick="nextImage()">›</span>
+        </div>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeVideoModal()">&times;</span>
+        <video 
+            id="modalVideo"
+            class="modal-content"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+            <source src="assets/images/buildBig.mp4" type="video/mp4" />
+            <source src="assets/images/buildSmaller-1.mp4" type="video/mp4" />
+            <source src="assets/images/buildvid.mp4" type="video/mp4" />
+        </video>
+        <div id="videoCaption">Digital Model Build Animation</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

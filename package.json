@@ -1,0 +1,45 @@
+{
+  "name": "emcev-website",
+  "version": "1.0.0",
+  "description": "A modern, responsive website for EMCEV",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=3000 --open=/index.html",
+    "dev": "npx live-server --port=3000 --open=/index.html --watch=.",
+    "build": "echo 'No build process needed for static site'",
+    "serve": "npx http-server -p 8080 -o",
+    "lint:css": "npx stylelint '**/*.css'",
+    "lint:js": "npx eslint '**/*.js'",
+    "format": "npx prettier --write '**/*.{html,css,js}'"
+  },
+  "keywords": [
+    "website",
+    "responsive",
+    "modern",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "EMCEV Team",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "http-server": "^14.1.1",
+    "eslint": "^8.57.0",
+    "stylelint": "^16.0.0",
+    "prettier": "^3.2.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/emcev/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emcev/website/issues"
+  },
+  "homepage": "https://github.com/emcev/website#readme"
+}
