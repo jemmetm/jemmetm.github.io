@@ -987,6 +987,7 @@ section {
     padding: 40px 0;
     background: #2d2d2d;
     color: white;
+    overflow: hidden;
 }
 
 .inspiration-title {
@@ -1014,11 +1015,16 @@ section {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
+    will-change: transform;
 }
 
 .inspiration-image:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
     transform: scale(1.017);
+}
+
+.inspiration-gallery {
+    overflow: hidden;
 }
 
 .inspiration-image img {
@@ -1444,6 +1450,60 @@ section {
     color: white;
 }
 
+.content-section {
+    margin-bottom: 60px;
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-align: left;
+}
+
+.videos-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .videos-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
 /* Projects Section */
 .projects-section {
     padding: 20px 0 80px 0;
@@ -1597,6 +1657,24 @@ section {
     height: 800px;
     border: none;
     display: block;
+}
+
+.placeholder-image-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    padding: 2rem;
+}
+
+.placeholder-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: contain;
 }
 
 .pdf-fallback {
