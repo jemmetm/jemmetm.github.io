@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to our modern website">
-    <title>MCEV Website</title>
+    <meta name="description" content="Portfolio and development projects.">
+    <title>MCEV</title>
     <link rel="icon" type="image/png" href="assets/images/icon2.png">
     <link rel="stylesheet" href="styles.css?v=3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,19 +22,16 @@
                 </div>
                 <ul class="nav__menu">
                     <li class="nav__item">
-                        <a href="#home" class="nav__link">Home</a>
+                        <a href="#about" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="projects.html" class="nav__link">Projects</a>
+                        <a href="#projects" class="nav__link">Projects</a>
                     </li>
                     <li class="nav__item">
                         <a href="#contact" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item">
-                        <a href="thoughts.html" class="nav__link">Thoughts</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="resume.html" class="nav__link">Resume</a>
+                        <a href="#resume" class="nav__link">Resume</a>
                     </li>
                 </ul>
                 <div class="nav__toggle" id="nav-toggle">
@@ -47,20 +44,130 @@
     </header>
 
     <main>
-        <section id="home" class="work-in-progress-section">
+        <section id="about" class="project-hero">
             <div class="container">
-                <div class="work-in-progress-content">
-                    <h1 class="work-in-progress-title">Welcome</h1>
+                <div class="project-hero__content">
+                    <h1 class="project-hero__title">About</h1>
+                    <div class="about-content">
+                        <img src="assets/images/face.png" alt="Emmet McEvilley" class="about-photo" />
+                        <p class="about-blurb">My name is Emmet McEvilley and I'm studying mechanical engineering at Carnegie Mellon University, where I work on ankle exoskeleton research at the MetaMobility Lab. I love engineering, design, and making awesome systems — and I believe half of engineering is documenting your work so others can understand it and build on it.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        
+        <section id="projects" class="project-hero">
+            <div class="container">
+                <div class="project-hero__content">
+                    <h1 class="project-hero__title">Projects</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="container">
+                <div class="projects-grid">
+                    <a href="ankleexo.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Open-Source Ankle Exoskeleton</h2>
+                                    <p class="project-card__blurb">Within Carnegie Mellon University's MetaMobility Lab, I spent the summer of 2026 developing an open-source ankle exoskeleton to improve gait stability and support rehabilitation in clinical populations. The project now focuses on documenting and sharing the design so that other researchers can recreate and build upon it.</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder"></div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="dawnaccipiter.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">The Dawn Accipiter</h2>
+                                    <p class="project-card__blurb">People got through the pandemic in various ways. I spent much of it trying to design a LEGO<sup>&reg;</sup> spaceship that felt unique yet undeniably <em>Star Wars</em>—where neither the look nor the mechanisms compromised the other. After a year of experimenting, designing, building, and revising, I completed what you see here. All part files are available below.</p>
+                                </div>
+                                <div class="project-card__thumbnail">
+                                    <img src="assets/images/dawnaccipiter/DA thumbnail.png" alt="Dawn Accipiter Thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="onlyodds.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">OnlyOdds</h2>
+                                    <p class="project-card__blurb">I co-founded OnlyOdds, a community-based micro-prediction app where friends and groups create questions about real-life moments—from social predictions and campus events to sports and everyday outcomes—and compete to see who’s right. The app uses an ELO-style rating system to track prediction performance and is currently under development.</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder"></div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="spectral.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Spectral</h2>
+                                    <p class="project-card__blurb">I worked with a team to develop an MVP concept addressing biker safety through market research and stakeholder interviews within the biking industry as part of a Carnegie Mellon University course.</p>
+                                </div>
+                                <div class="project-card__thumbnail">
+                                    <img src="assets/images/spectral thumbnail.png" alt="Spectral Thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="gatleymaths.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Gatley Maths</h2>
+                                    <p class="project-card__blurb">Enjoy math problems? Want to test your calculus skills? Try these problems a friend and I created and solved on YouTube.</p>
+                                </div>
+                                <div class="project-card__thumbnail">
+                                    <img src="assets/images/gatley_thumbnail.png" alt="Gatley Maths Thumbnail" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--
+                    <a href="digitaldetox.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Carnegie Mellon Digital Detox Program</h2>
+                                    <p class="project-card__blurb">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="coffeeandcapitalism.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Coffee and Capitalism</h2>
+                                    <p class="project-card__blurb">Blah blah blah blah blah blah blah</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    -->
+                </div>
+            </div>
+        </section>
 
         <section id="contact" class="contact">
             <div class="container">
                 <div class="section__header">
-                    <h2 class="section__title">Contact Information</h2>
+                    <h1 class="project-hero__title">Contact</h1>
                 </div>
                 <div class="contact__content">
                     <div class="contact-info">
@@ -69,6 +176,26 @@
                         <div class="contact-info__item"><strong>Location:</strong> Marin, CA / Pittsburgh, PA</div>
                         <div class="contact-info__item"><strong>LinkedIn:</strong> linkedin.com/in/emmetmcevilley</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resume" class="project-hero">
+            <div class="container">
+                <div class="project-hero__content">
+                    <h1 class="project-hero__title">Resume</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="presentation-section">
+            <div class="container">
+                <div class="pdf-viewer-container">
+                    <embed
+                        src="assets/resume_august17.pdf"
+                        type="application/pdf"
+                        class="pdf-viewer"
+                        title="Emmet McEvilley Resume">
                 </div>
             </div>
         </section>
@@ -85,23 +212,16 @@
                     <div class="footer__column">
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="#home">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#projects">Projects</a></li>
                             <li><a href="#contact">Contact</a></li>
-                            <li><a href="resume.html">Resume</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h4>Projects</h4>
-                        <ul>
-                            <li><a href="dawnaccipiter.html">DawnAccipiter</a></li>
-                            <li><a href="spectral.html">Spectral</a></li>
-                            <li><a href="onlyodds.html">OnlyOdds</a></li>
+                            <li><a href="#resume">Resume</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 Emmet McEvilley. All rights reserved.</p>
+                <p>&copy; 2026 Emmet McEvilley. All rights reserved.</p>
             </div>
         </div>
     </footer>

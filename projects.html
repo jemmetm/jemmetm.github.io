@@ -22,19 +22,16 @@
                 </div>
                 <ul class="nav__menu">
                     <li class="nav__item">
-                        <a href="index.html" class="nav__link">Home</a>
+                        <a href="index.html#about" class="nav__link">About</a>
                     </li>
                     <li class="nav__item">
-                        <a href="projects.html" class="nav__link" style="color: #6252a3;">Projects</a>
+                        <a href="index.html#projects" class="nav__link">Projects</a>
                     </li>
                     <li class="nav__item">
                         <a href="index.html#contact" class="nav__link">Contact</a>
                     </li>
                     <li class="nav__item">
-                        <a href="thoughts.html" class="nav__link">Thoughts</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="resume.html" class="nav__link">Resume</a>
+                        <a href="index.html#resume" class="nav__link">Resume</a>
                     </li>
                 </ul>
                 <div class="nav__toggle" id="nav-toggle">
@@ -58,6 +55,18 @@
         <section class="projects-section">
             <div class="container">
                 <div class="projects-grid">
+                    <a href="ankleexo.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Open-Source Ankle Exoskeleton</h2>
+                                    <p class="project-card__blurb">Within Carnegie Mellon University's MetaMobility Lab, I spent the summer of 2026 developing an open-source ankle exoskeleton to improve gait stability and support rehabilitation in clinical populations. The project now focuses on documenting and sharing the design so that other researchers can recreate and build upon it.</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder"></div>
+                            </div>
+                        </div>
+                    </a>
+
                     <a href="dawnaccipiter.html" class="project-card-link">
                         <div class="project-card">
                             <div class="project-card__content">
@@ -66,7 +75,7 @@
                                     <p class="project-card__blurb">People got through the pandemic in various ways. I spent much of it trying to design a LEGO<sup>&reg;</sup> spaceship that felt unique yet undeniably <em>Star Wars</em>—where neither the look nor the mechanisms compromised the other. After a year of experimenting, designing, building, and revising, I completed what you see here. All part files are available below.</p>
                                 </div>
                                 <div class="project-card__thumbnail">
-                                    <img src="assets/images/DA thumbnail.png" alt="Dawn Accipiter Thumbnail" />
+                                    <img src="assets/images/dawnaccipiter/DA thumbnail.png" alt="Dawn Accipiter Thumbnail" />
                                 </div>
                             </div>
                         </div>
@@ -77,10 +86,9 @@
                             <div class="project-card__content">
                                 <div class="project-card__text">
                                     <h2 class="project-card__title">OnlyOdds</h2>
-                                    <p class="project-card__blurb">OnlyOdds is a community-based micro-prediction app where friends and groups create questions about real-life moments—social predictions, campus events, sports, and everyday outcomes—and compete to see who’s right. Currently under development.</p>
+                                    <p class="project-card__blurb">I co-founded OnlyOdds, a community-based micro-prediction app where friends and groups create questions about real-life moments—from social predictions and campus events to sports and everyday outcomes—and compete to see who’s right. The app uses an ELO-style rating system to track prediction performance and is currently under development.</p>
                                 </div>
-                                <div class="project-card__thumbnail project-card__thumbnail--placeholder">
-                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder"></div>
                             </div>
                         </div>
                     </a>
@@ -90,7 +98,7 @@
                             <div class="project-card__content">
                                 <div class="project-card__text">
                                     <h2 class="project-card__title">Spectral</h2>
-                                    <p class="project-card__blurb">How might biking in Pittsburgh be improved? This project, developed in a Carnegie Mellon course, explores that question through user research and market analysis. The resulting concept solution is shown below.</p>
+                                    <p class="project-card__blurb">I worked with a team to develop an MVP concept addressing biker safety through market research and stakeholder interviews within the biking industry as part of a Carnegie Mellon University course.</p>
                                 </div>
                                 <div class="project-card__thumbnail">
                                     <img src="assets/images/spectral thumbnail.png" alt="Spectral Thumbnail" />
@@ -98,17 +106,6 @@
                             </div>
                         </div>
                     </a>
-
-                    <div class="project-card">
-                        <div class="project-card__content">
-                            <div class="project-card__text">
-                                <h2 class="project-card__title">Bracket Mass Minimization</h2>
-                                <p class="project-card__blurb">Blah blah blah blah blah blah blah</p>
-                            </div>
-                            <div class="project-card__thumbnail project-card__thumbnail--placeholder">
-                            </div>
-                        </div>
-                    </div>
 
                     <a href="gatleymaths.html" class="project-card-link">
                         <div class="project-card">
@@ -124,16 +121,33 @@
                         </div>
                     </a>
 
-                    <div class="project-card">
-                        <div class="project-card__content">
-                            <div class="project-card__text">
-                                <h2 class="project-card__title">Carnegie Mellon Digital Detox Program</h2>
-                                <p class="project-card__blurb">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            </div>
-                            <div class="project-card__thumbnail project-card__thumbnail--placeholder">
+                    <!--
+                    <a href="digitaldetox.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Carnegie Mellon Digital Detox Program</h2>
+                                    <p class="project-card__blurb">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
+
+                    <a href="coffeeandcapitalism.html" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-card__content">
+                                <div class="project-card__text">
+                                    <h2 class="project-card__title">Coffee and Capitalism</h2>
+                                    <p class="project-card__blurb">Blah blah blah blah blah blah blah</p>
+                                </div>
+                                <div class="project-card__thumbnail project-card__thumbnail--placeholder">
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    -->
                 </div>
             </div>
         </section>
@@ -150,23 +164,16 @@
                     <div class="footer__column">
                         <h4>Navigation</h4>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#projects">Projects</a></li>
                             <li><a href="index.html#contact">Contact</a></li>
-                            <li><a href="resume.html">Resume</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h4>Projects</h4>
-                        <ul>
-                            <li><a href="dawnaccipiter.html">DawnAccipiter</a></li>
-                            <li><a href="spectral.html">Spectral</a></li>
-                            <li><a href="onlyodds.html">OnlyOdds</a></li>
+                            <li><a href="index.html#resume">Resume</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>&copy; 2025 Emmet McEvilley. All rights reserved.</p>
+                <p>&copy; 2026 Emmet McEvilley. All rights reserved.</p>
             </div>
         </div>
     </footer>

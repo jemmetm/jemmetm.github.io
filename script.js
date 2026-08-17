@@ -34,11 +34,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = target.offsetTop - headerHeight;
-            
             window.scrollTo({
-                top: targetPosition,
+                top: target.offsetTop,
                 behavior: 'smooth'
             });
         }
@@ -351,12 +348,16 @@ function openModal(imageSrc, caption) {
     const isMechanism = imageSrc.includes('r2_head_mechanism') || imageSrc.includes('r2_wing_feet_mechanism') || 
                         imageSrc.includes('r2_board_ramp_mechanism');
     
+    const isDawnAccipiter = isInspiration || isMechanism ||
+        imageSrc.includes('/dawnaccipiter/') ||
+        /\/(331|400|332|401|333|402|334|403|335|404|336|337)\.png$/.test(imageSrc);
+
     if (isInspiration) {
         currentImageList = [
-            'assets/images/millenium.png',
-            'assets/images/imperialshuttle.png', 
-            'assets/images/bird.png',
-            'assets/images/city.png'
+            'assets/images/dawnaccipiter/millenium.png',
+            'assets/images/dawnaccipiter/imperialshuttle.png',
+            'assets/images/dawnaccipiter/bird.png',
+            'assets/images/dawnaccipiter/city.png'
         ];
         currentCaptionList = [
             'Millennium Falcon',
@@ -366,29 +367,29 @@ function openModal(imageSrc, caption) {
         ];
     } else if (isMechanism) {
         currentImageList = [
-            'assets/images/r2_head_mechanism.png',
-            'assets/images/r2_wing_feet_mechanism.png',
-            'assets/images/r2_board_ramp_mechanism.png'
+            'assets/images/dawnaccipiter/r2_head_mechanism.png',
+            'assets/images/dawnaccipiter/r2_wing_feet_mechanism.png',
+            'assets/images/dawnaccipiter/r2_board_ramp_mechanism.png'
         ];
         currentCaptionList = [
             'Head Mechanism',
             'Wing Feet Mechanism',
             'Board Ramp Mechanism'
         ];
-    } else {
+    } else if (isDawnAccipiter) {
         currentImageList = [
-            'assets/images/331.png',
-            'assets/images/400.png',
-            'assets/images/332.png',
-            'assets/images/401.png',
-            'assets/images/333.png',
-            'assets/images/402.png',
-            'assets/images/334.png',
-            'assets/images/403.png',
-            'assets/images/335.png',
-            'assets/images/404.png',
-            'assets/images/336.png',
-            'assets/images/337.png'
+            'assets/images/dawnaccipiter/331.png',
+            'assets/images/dawnaccipiter/400.png',
+            'assets/images/dawnaccipiter/332.png',
+            'assets/images/dawnaccipiter/401.png',
+            'assets/images/dawnaccipiter/333.png',
+            'assets/images/dawnaccipiter/402.png',
+            'assets/images/dawnaccipiter/334.png',
+            'assets/images/dawnaccipiter/403.png',
+            'assets/images/dawnaccipiter/335.png',
+            'assets/images/dawnaccipiter/404.png',
+            'assets/images/dawnaccipiter/336.png',
+            'assets/images/dawnaccipiter/337.png'
         ];
         currentCaptionList = [
             'Dawn Accipiter Render 1',
@@ -404,15 +405,24 @@ function openModal(imageSrc, caption) {
             'Dawn Accipiter Photo 6',
             'Dawn Accipiter Photo 7'
         ];
+    } else {
+        currentImageList = [imageSrc];
+        currentCaptionList = [caption];
     }
     
     // Find current image index
     currentImageIndex = currentImageList.indexOf(imageSrc);
-    
+
     modal.style.display = 'block';
     modalImg.src = imageSrc;
+    modalImg.classList.toggle('filtered', isDawnAccipiter);
     modalCaption.innerHTML = caption;
-    
+
+    const modalNav = modal.querySelector('.modal-nav');
+    if (modalNav) {
+        modalNav.style.display = currentImageList.length > 1 ? 'flex' : 'none';
+    }
+
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
 }
@@ -488,7 +498,7 @@ function previousImage() {
 
 function nextImage() {
     if (currentImageList.length === 0) return;
-    
+
     currentImageIndex = (currentImageIndex + 1) % currentImageList.length;
     const modalImg = document.getElementById('modalImage');
     const modalCaption = document.getElementById('modalCaption');
@@ -496,5 +506,14 @@ function nextImage() {
     if (currentCaptionList.length > currentImageIndex) {
         modalCaption.innerHTML = currentCaptionList[currentImageIndex];
     }
+}
+
+// Collapsible Section Toggle
+function toggleSection(header) {
+    const content = header.nextElementSibling;
+    const isCollapsed = content.style.display === 'none';
+
+    content.style.display = isCollapsed ? 'block' : 'none';
+    header.classList.toggle('expanded', isCollapsed);
 }
 

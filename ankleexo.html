@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DawnAccipiter - Project Details and Development">
+    <title>DawnAccipiter - Emmet McEvilley</title>
+    <link rel="icon" type="image/png" href="assets/images/icon2.png">
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__container">
+                <div class="nav__logo">
+                    <a href="index.html" style="text-decoration: none; color: #000000;">
+                        <img src="assets/images/logo2.png" alt="EMCEV Logo" />
+                    </a>
+                </div>
+                <ul class="nav__menu">
+                    <li class="nav__item">
+                        <a href="index.html#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#projects" class="nav__link">Projects</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#contact" class="nav__link">Contact</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="index.html#resume" class="nav__link">Resume</a>
+                    </li>
+                </ul>
+                <div class="nav__toggle" id="nav-toggle">
+                    <span class="nav__hamburger"></span>
+                    <span class="nav__hamburger"></span>
+                    <span class="nav__hamburger"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="container">
+                <div class="project-hero__content">
+                    <h1 class="project-hero__title">Open-Source Ankle Exoskeleton</h1>
+                    <p class="project-hero__subtitle">A backdriveable quasi-direct-drive ankle exoskeleton capable of delivering up to 15 N·m of bidirectional ankle torque.</p>
+                </div>
+                <div class="video-content">
+                    <div class="video-text">
+                        <p class="video-description">
+                            Within Carnegie Mellon University's <a href="https://metamobility.cmu.edu/" target="_blank" rel="noopener" class="mellow-link">MetaMobility Lab</a>, I spent the summer of 2026 developing an open-source ankle exoskeleton to improve gait stability and support rehabilitation in clinical populations. The project now focuses on documenting and sharing the design so that other researchers can recreate and build upon it.
+                        </p>
+                    </div>
+                    <div class="video-container">
+                        <iframe 
+                            width="100%" 
+                            height="400" 
+                            src="https://www.youtube.com/embed/c6Q4FquJ6GI"
+                            title="Ankle Exoskeleton Demo"
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="inspiration-section ankleexo-inspiration">
+            <div class="container">
+                <h2 class="inspiration-title">Project Motivation</h2>
+                <div class="inspiration-gallery" style="display: block; max-width: 100%; width: 100%; margin-left: 0; margin-right: 0;">
+                    <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">
+                        Most lab-built ankle exoskeletons are proprietary, making it nearly impossible for other researchers to reproduce results or build on existing work. Even open-source designs often rely on fabrication methods few labs have access to, and commercial systems cost thousands of dollars.
+                    </p>
+                    <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">
+                        This project set out to close that gap: a platform accurate and repeatable enough for gait stability and rehabilitation research, built almost entirely with in-house 3D printing, and fully open for other labs to replicate and build on.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="digital-mode-section">
+            <div class="container">
+              <div class="collapsible-header" onclick="toggleSection(this)">
+                  <h2 class="digital-mode-title">Design Framework</h2>
+                  <i class="fas fa-chevron-down collapse-chevron"></i>
+              </div>
+              <div class="digital-mode-content collapsible-content" style="display: none;">
+                  <img src="assets/images/ankleexo/leg.png" alt="Ankle exoskeleton leg attachment" class="digital-mode-image-float leg-image" onclick="openModal('assets/images/ankleexo/leg.png', 'Placeholder caption: ankle exoskeleton leg attachment')" />
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">An ankle exoskeleton's objective is to apply torque about the ankle joint. Since the ankle connects the foot and shank, accomplishing this requires three fundamental hardware components:</p>
+                  <ol class="video-description paren-list" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%; padding-left: 1.5rem;">
+                      <li>A connection to the foot</li>
+                      <li>A connection to the shank</li>
+                      <li>A mechanism for torque generation between the two segments</li>
+                  </ol>
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">Beyond these three active design challenges, the system also needed to preserve the passive degrees of freedom required for natural ankle motion.</p>
+              </div>
+            </div>
+          </section>
+
+        <section class="inspiration-section design-process-section">
+            <div class="container">
+              <div class="collapsible-header" onclick="toggleSection(this)">
+                  <h2 class="inspiration-title">Design Process</h2>
+                  <i class="fas fa-chevron-down collapse-chevron"></i>
+              </div>
+              <div class="collapsible-content" style="display: none;">
+              <h3 class="design-process-subtitle">Torque Generation</h3>
+              <div class="digital-mode-content">
+                  <img src="assets/images/ankleexo/robstrideINFO.png" alt="RobStride 02 actuator specifications" class="digital-mode-image-float robstride-image" onclick="openModal('assets/images/ankleexo/robstrideINFO.png', 'Placeholder caption: RobStride 02 actuator specifications')" />
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">Early in the project, we selected a quasi-direct-drive (QDD) architecture using a RobStride 02 actuator.</p>
+                  <ul class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%; padding-left: 1.5rem;">
+                      <li><strong>High backdrivability.</strong> Low gear reduction minimizes friction and reflected inertia, allowing the exoskeleton to remain transparent when assistance is not being applied.</li>
+                      <li><strong>Precise torque delivery.</strong> Direct ankle actuation eliminates transmission losses, enabling accurate, repeatable torque control—essential for evaluating gait assistance strategies and machine learning–based controllers.</li>
+                      <li><strong>Bidirectional actuation.</strong> A single actuator generates both plantarflexion and dorsiflexion torque without the complexity of separate cable-driven systems.</li>
+                      <li><strong>Mechanical simplicity.</strong> The compact and modular system allows for fast testing, assembly, and future design iterations.</li>
+                  </ul>
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;"><strong>Tradeoff:</strong> A motor directly at the ankle is distally massive. However, compact QDD actuators keep this penalty relatively small, and <a href="https://www.biorxiv.org/content/10.64898/2026.06.02.729541v1.abstract" target="_blank" rel="noopener" class="mellow-link">recent studies</a> suggest that larger assistive torques do not necessarily produce better outcomes, meaning the motor can stay relatively lightweight.</p>
+              </div>
+              <hr class="section-divider" />
+              <h3 class="design-process-subtitle">Shank Connection</h3>
+              <div class="digital-mode-content">
+                  <img src="assets/images/ankleexo/shankdesign.png" alt="Shank connection design" class="digital-mode-image-float shank-image" onclick="openModal('assets/images/ankleexo/shankdesign.png', 'Placeholder caption: shank connection design')" />
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">Unlike the foot interface, which underwent numerous iterations, the shank connection converged quickly.</p>
+                  
+                  <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">A straight support extending from the actuator to an adjustable-height cuff provided a robust, lightweight solution, with later revisions focused primarily on improving strength and fit rather than changing the overall concept.</p>
+
+              </div>
+              <hr class="section-divider" />
+              <h3 class="design-process-subtitle">Foot Connection</h3>
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">Undoubtedly, the foot connection required the most iteration. With the torque generation architecture and shank interface established early on, development focused on two concepts pursued in parallel:</p>
+              <ul class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%; padding-left: 1.5rem;">
+                  <li>An insertable footplate that fits inside an unmodified shoe.</li>
+                  <li>A modified shoe that became an integral part of the exoskeleton.</li>
+              </ul>
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">The insertable footplate was initially the preferred solution. It offered excellent modularity and required no permanent modifications to the user's footwear. However, repeated prototypes revealed that achieving the necessary stiffness and durability while maintaining a comfortable, ergonomic profile was not feasible using only 3D-printed components.</p>
+              <div class="foot-connection-media">
+                  <img src="assets/images/ankleexo/footconnectiondesign.png" alt="Design tree showing the evolution of both foot connection concepts" class="full-width-image" onclick="openModal('assets/images/ankleexo/footconnectiondesign.png', 'Regardless of the approach, the rigid structure needed to span from the heel to the ball of the foot. Otherwise, the shoe itself became the compliant element, reducing stiffness and torque transmission.')" />
+                  <div class="mosaic-grid">
+                      <img src="assets/images/ankleexo/insertfootplate.png" alt="Insertable footplate concept" class="mosaic-thumb-img" onclick="openModal('assets/images/ankleexo/insertfootplate.png', 'Placeholder caption: insertable footplate concept')" />
+                      <img src="assets/images/ankleexo/bootshoe.png" alt="Modified boot shoe concept" class="mosaic-thumb-img" onclick="openModal('assets/images/ankleexo/bootshoe.png', 'Placeholder caption: modified boot shoe concept')" />
+                      <img src="assets/images/ankleexo/boltshoe.png" alt="Bolted shoe attachment concept" class="mosaic-thumb-img" onclick="openModal('assets/images/ankleexo/boltshoe.png', 'Placeholder caption: bolted shoe attachment concept')" />
+                      <img src="assets/images/ankleexo/rough_EVA.png" alt="Rough EVA foam concept" class="mosaic-thumb-img" onclick="openModal('assets/images/ankleexo/rough_EVA.png', 'Placeholder caption: rough EVA foam concept')" />
+                  </div>
+              </div>
+
+
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">Regardless of the approach, the rigid structure needed to span from the heel to the ball of the foot. Otherwise, the shoe itself became the compliant element, reducing stiffness and torque transmission. The modified shoe ultimately proved to be the more robust solution. Of the modified-shoe approaches considered, the final design was also the simplest to manufacture, requiring only a single cut through the shoe while providing large bonding surfaces for a strong, straightforward load path. Because the structural components were attached directly to the shoe rather than placed beneath the foot, the design no longer needed to conform to the complex geometry of the sole, greatly simplifying fabrication. The large bonding area also distributed loads across a broad interface, providing a strong connection while leaving room to reinforce critical regions if higher torques were required in future iterations.</p>
+
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">The primary tradeoffs were reduced modularity, additional hands-on manufacturing, and the introduction of heel drop due to the added foot structure. Despite these compromises, the modifications are straightforward to perform, and the resulting design is significantly more robust. Complete assembly instructions are provided in the documentation below.</p>
+
+              <h3 class="design-process-subtitle">Preserving Natural Motion</h3>
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 0; max-width: 100%;">While the exoskeleton actively applies torque in plantarflexion and dorsiflexion, the ankle also moves through several other degrees of freedom during natural gait. These motions needed to remain passive so that the exoskeleton could provide assistance without unnecessarily restricting the user's movement.</p>
+              <p class="video-description" style="font-size: 1.2rem; line-height: 1.8; margin: 1.5rem 0 0; max-width: 100%;">A hinged connection allows passive inversion and eversion, while the shank cuff can rotate slightly around the leg to accommodate internal and external rotation (adduction and abduction). A more complex mechanism for this motion was possible, but was not necessary for the intended scope of the design.</p>
+              </div>
+            </div>
+          </section>
+
+        <section class="digital-mode-section">
+            <div class="container">
+              <h2 class="digital-mode-title">Final Design</h2>
+            </div>
+          </section>
+
+        <section class="inspiration-section">
+            <div class="container">
+              <h2 class="inspiration-title">Open-Source Resources</h2>
+            </div>
+          </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3>MCEV</h3>
+                    <p>Portfolio and development projects.</p>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__column">
+                        <h4>Navigation</h4>
+                        <ul>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#projects">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                            <li><a href="index.html#resume">Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Emmet McEvilley. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">
+            <svg class="close-icon" viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+        </span>
+        <div class="modal-nav">
+            <span class="nav-arrow prev" onclick="previousImage()">‹</span>
+            <span class="nav-arrow next" onclick="nextImage()">›</span>
+        </div>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal">
+        <span class="close" onclick="closeVideoModal()">
+            <svg class="close-icon" viewBox="0 0 24 24"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+        </span>
+        <video 
+            id="modalVideo"
+            class="modal-content filtered"
+            autoplay
+            muted
+            loop
+            playsinline
+        >
+            <source src="assets/images/buildBig.mp4" type="video/mp4" />
+            <source src="assets/images/buildSmaller-1.mp4" type="video/mp4" />
+            <source src="assets/images/buildvid.mp4" type="video/mp4" />
+        </video>
+        <div id="videoCaption">Digital Model Build Animation</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

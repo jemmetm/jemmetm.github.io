@@ -391,7 +391,8 @@ section {
 
 /* Contact Section */
 .contact {
-    background-color: #2d2d2d;
+    padding: 100px 0 20px;
+    background-color: #1a1a1a;
 }
 
 .contact__content {
@@ -931,10 +932,182 @@ section {
     margin: 0;
 }
 
+.paren-list {
+    list-style: none;
+    counter-reset: paren-counter;
+}
+
+.paren-list li {
+    counter-increment: paren-counter;
+    position: relative;
+}
+
+.paren-list li::before {
+    content: counter(paren-counter) ") ";
+    position: absolute;
+    left: -1.5rem;
+}
+
+.design-process-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: left;
+    margin: 2.5rem 0 1rem 0;
+    padding-left: 0.5rem;
+}
+
+.design-process-subtitle:first-of-type {
+    margin-top: 0;
+}
+
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapsible-header .digital-mode-title,
+.collapsible-header .inspiration-title {
+    margin: 0;
+}
+
+.collapse-chevron {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header.expanded .collapse-chevron {
+    transform: rotate(180deg);
+}
+
+.digital-mode-content {
+    overflow: hidden;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 2.5rem 0;
+}
+
+.foot-connection-media {
+    width: 100%;
+    max-width: 700px;
+    margin: 2rem auto;
+}
+
+.mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+.mosaic-thumb {
+    aspect-ratio: 4 / 3;
+    border: 2px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.mosaic-thumb-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosaic-thumb-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.full-width-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.full-width-image:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.digital-mode-image-float {
+    float: right;
+    width: 40%;
+    height: auto;
+    border-radius: 12px;
+    margin: 0 0 1.5rem 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.digital-mode-image-float:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.leg-image {
+    max-width: 200px;
+}
+
+.robstride-image {
+    max-width: 360px;
+}
+
+.shank-image {
+    max-width: 360px;
+}
+
+@media (max-width: 700px) {
+    .digital-mode-image-float {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: 0 auto 1.5rem;
+    }
+
+    .leg-image {
+        max-width: 280px;
+    }
+
+    .robstride-image {
+        max-width: 280px;
+    }
+
+    .shank-image {
+        max-width: 280px;
+    }
+}
+
+.mellow-link {
+    color: #8ab4d8;
+    text-decoration: none;
+}
+
+.mellow-link:hover {
+    color: #a7c7e0;
+    text-decoration: underline;
+}
+
 .video-container {
     border-radius: 12px;
     overflow: visible;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     aspect-ratio: 16/9;
     min-height: calc(500px * var(1.2));
     transform: scale(var(1.2));
@@ -988,6 +1161,49 @@ section {
     background: #2d2d2d;
     color: white;
     overflow: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+.ankleexo-inspiration {
+    background: linear-gradient(135deg, rgba(22, 22, 22, 0.9), rgba(66, 62, 58, 0.84));
+}
+
+.ankleexo-inspiration::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/images/ankleexo/printer.webp");
+    background-size: cover;
+    background-position: 50% 75%;
+    filter: blur(1px);
+    transform: scale(1.05);
+    opacity: 0.35;
+    z-index: -1;
+}
+
+/*
+.design-process-section {
+    background: linear-gradient(135deg, rgba(22, 22, 22, 0.9), rgba(66, 62, 58, 0.84));
+}
+
+.design-process-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/images/ankleexo/metal_texture.jpeg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    transform: scale(1.05);
+    opacity: 0.35;
+    z-index: -1;
+}
+*/
+
+.inspiration-section > .container {
+    position: relative;
+    z-index: 1;
 }
 
 .inspiration-title {
@@ -1048,7 +1264,7 @@ section {
 }
 
 .digital-mode-section {
-    padding: 60px 0;
+    padding: 40px 0;
     background: #1a1a1a;
     color: white;
 }
@@ -1174,7 +1390,10 @@ section {
     transform: translate(-50%, -50%);
     border-radius: 8px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-    filter: brightness(0.9) contrast(1.1) saturate(0.7) hue-rotate(-15deg); /* Apply same filter as gallery images */
+}
+
+.modal-content.filtered {
+    filter: brightness(0.9) contrast(1.1) saturate(0.7) hue-rotate(-15deg); /* Match Dawn Accipiter renders */
 }
 
 .close {
@@ -1182,8 +1401,6 @@ section {
     top: 20px;
     right: 35px;
     color: #ffffff;
-    font-size: 40px;
-    font-weight: bold;
     cursor: pointer;
     z-index: 1001;
     transition: color 0.3s ease;
@@ -1191,6 +1408,17 @@ section {
 
 .close:hover {
     color: #e44d25;
+}
+
+.close-icon {
+    --close-icon-thickness: 2;
+    width: 28px;
+    height: 28px;
+    stroke: currentColor;
+    stroke-width: var(--close-icon-thickness);
+    stroke-linecap: round;
+    fill: none;
+    display: block;
 }
 
 .modal-nav {
@@ -1244,6 +1472,7 @@ section {
     text-align: center;
     color: #ffffff;
     padding: 20px 0;
+    font-family: Arial, sans-serif;
     font-size: 1.2rem;
     z-index: 1002;
 }
@@ -1414,6 +1643,35 @@ section {
     font-size: 1.25rem;
     color: #cccccc;
     margin-bottom: 2rem;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.about-blurb {
+    font-size: 1.25rem;
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .project-status {
