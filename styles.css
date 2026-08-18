@@ -527,7 +527,7 @@ section {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
-        background-color: #2d2d2d;
+        background-color: #1a1a1a;
         flex-direction: column;
         justify-content: start;
         align-items: center;
@@ -545,7 +545,7 @@ section {
     }
 
     .nav__toggle.active .nav__hamburger:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: translateY(9px) rotate(45deg);
     }
 
     .nav__toggle.active .nav__hamburger:nth-child(2) {
@@ -553,7 +553,7 @@ section {
     }
 
     .nav__toggle.active .nav__hamburger:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+        transform: translateY(-9px) rotate(-45deg);
     }
 
     .hero__container {
@@ -1670,7 +1670,7 @@ section {
 @media (max-width: 700px) {
     .about-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
