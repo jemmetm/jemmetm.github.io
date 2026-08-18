@@ -352,6 +352,10 @@ function openModal(imageSrc, caption) {
         imageSrc.includes('/dawnaccipiter/') ||
         /\/(331|400|332|401|333|402|334|403|335|404|336|337)\.png$/.test(imageSrc);
 
+    const isAnkleFinalDesign = imageSrc.includes('/ankleexofinaldesign/');
+    const isAnkleFootConcept = imageSrc.includes('insertfootplate') || imageSrc.includes('bootshoe') ||
+        imageSrc.includes('boltshoe') || imageSrc.includes('rough_EVA');
+
     if (isInspiration) {
         currentImageList = [
             'assets/images/dawnaccipiter/millenium.png',
@@ -405,11 +409,45 @@ function openModal(imageSrc, caption) {
             'Dawn Accipiter Photo 6',
             'Dawn Accipiter Photo 7'
         ];
+    } else if (isAnkleFinalDesign) {
+        currentImageList = [
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-1.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-2.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-3.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-4.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-5.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-6.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-7.png',
+            'assets/images/ankleexo/ankleexofinaldesign/Untitled-8.png'
+        ];
+        currentCaptionList = [
+            'Final Design Front View',
+            'Ankle Actuator Mount Detail',
+            'Final Design Isometric View',
+            'Final Design Top View',
+            'Final Design Side View',
+            'Final Design Frontal Side View',
+            'Worn on Treadmill, Close-Up',
+            'Held on Treadmill'
+        ];
+    } else if (isAnkleFootConcept) {
+        currentImageList = [
+            'assets/images/ankleexo/insertfootplate.png',
+            'assets/images/ankleexo/bootshoe.png',
+            'assets/images/ankleexo/boltshoe.png',
+            'assets/images/ankleexo/rough_EVA.png'
+        ];
+        currentCaptionList = [
+            'Insertable Footplate Design',
+            'Boot Slot Cut Design',
+            'Bolted Shoe Design',
+            'Final Design: Sandwiched Plate in Outsole'
+        ];
     } else {
         currentImageList = [imageSrc];
         currentCaptionList = [caption];
     }
-    
+
     // Find current image index
     currentImageIndex = currentImageList.indexOf(imageSrc);
 
