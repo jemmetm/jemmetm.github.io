@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<body style="background:black; margin:0; display:flex; justify-content:center; align-items:center; height:100vh;">
+
+<!-- COMBINED: scene 1 (diamonds stagger into place + hexagon fades in) then
+     scene 2 (the two interlocking pieces pull apart, looping).
+     The two scenes share an identical assembled frame, so the cross-fade
+     handoff between them is invisible.
+       timeline:
+         0.3s   assembly begins (diamonds spread out, hexagon + dots fade in)
+         1.3s   assembled
+         1.4-1.6s   scene1 -> scene2 cross-fade (invisible swap)
+        1.8s   pull-apart begins and ends fully separated -->
+<svg viewBox="-60 -20 560 450" width="700" height="563" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    svg {
+      --move-ease: cubic-bezier(0.4,0,0,1);     /* scene 1 stagger / fades */
+      --pull-ease: cubic-bezier(0.25,0.1,0.25,1); /* scene 2 pull */
+      --pull-dur: 2.16s;                        /* 20% slower than the original 1.8s */
+      --dist: max(600px, 100vw, 100vh);         /* scale with the actual browser viewport */
+      overflow: visible;                        /* let the browser window, not the SVG frame, clip the motion */
+    }
+
+    /* ---------- scene 1: assembly ---------- */
+    @keyframes staggerLeft { to { transform: translate(0, 80px); } }
+    @keyframes staggerTop  { to { transform: translate(80px, -40px); } }
+    @keyframes fadeIn      { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeOut     { from { opacity: 1; } to { opacity: 0; } }
+
+    /* hard cut (no fade): scene1 and scene2 swap at the SAME instant (1.4s) so only
+       one scene is ever drawn per frame - no overlap (which doubled the lines) and
+       no gap (scene2 replaces scene1 in the same frame) */
+    .scene1     { animation: fadeOut 0s linear 1.4s forwards; }
+    .hexagon    { animation: fadeIn  1.0s var(--move-ease) 0.3s both; }
+    .face-left  { animation: staggerLeft 1.0s var(--move-ease) 0.3s both; }
+    .face-top   { animation: staggerTop  1.0s var(--move-ease) 0.3s both; }
+    .dot-right  { animation: fadeIn 1.0s var(--move-ease) 0.3s both; }
+    .dot-left   { animation: staggerLeft 1.0s var(--move-ease) 0.3s both, fadeIn 1.0s var(--move-ease) 0.3s both; }
+    .dot-top    { animation: staggerTop  1.0s var(--move-ease) 0.3s both, fadeIn 1.0s var(--move-ease) 0.3s both; }
+
+    /* ---------- scene 2: pull apart ---------- */
+    .scene2 { animation: fadeIn 0s linear 1.4s both; }                 /* hand on */
+    /* pull along the cube's exact down-right axis (slope 0.5 = 26.57deg, NOT 30deg)
+       so the interlocking seam lines stay colinear as the pieces separate.
+       unit vector (2,1)/sqrt5 */
+    @keyframes pullUpLeft    { to { transform: translate(calc(-1 * var(--dist) * 0.894427), calc(-1 * var(--dist) * 0.447214)); } }
+    @keyframes pullDownRight { to { transform: translate(calc(     var(--dist) * 0.894427), calc(     var(--dist) * 0.447214)); } }
+    .upLeft    { animation: pullUpLeft    var(--pull-dur) var(--pull-ease) 1.8s 1 forwards; }
+    .downRight { animation: pullDownRight var(--pull-dur) var(--pull-ease) 1.8s 1 forwards; }
+
+    .edge { fill: black; stroke: white; stroke-width: 6.75; stroke-linejoin: round; }
+    .dia  { fill: none;  stroke: white; stroke-width: 6.75; stroke-linejoin: round; }
+    .dot  { fill: white; }
+  </style>
+
+  <!-- ============ SCENE 1 : assembly ============ -->
+  <g class="scene1">
+    <polygon class="hexagon" points="200,40 360,120 360,280 200,360 40,280 40,120" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+
+    <polygon class="face-right" points="200,200 280,160 280,240 200,280" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+    <circle class="dot-right" cx="240" cy="220" r="10" fill="white" opacity="0"/>
+
+    <polygon class="face-left" points="120,160 200,200 200,280 120,240" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+    <circle class="dot-left" cx="160" cy="220" r="10" fill="white" opacity="0"/>
+
+    <polygon class="face-top" points="200,120 280,160 200,200 120,160" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+    <circle class="dot-top" cx="200" cy="160" r="10" fill="white" opacity="0"/>
+  </g>
+
+  <!-- ============ SCENE 2 : pull apart ============ -->
+  <g class="scene2">
+    <!-- layer 1: B's inner walls (B is the BACK piece, so its walls sit lowest) -->
+    <g class="downRight">
+      <polygon class="edge" points="200,200 280,160 200,120 120,160"/>
+      <polygon class="edge" points="200,200 120,160 120,240 200,280"/>
+      <polygon class="edge" points="280,160 200,120 200,200 280,240"/>
+      <polygon class="edge" points="200,280 280,240 200,200 120,240"/>
+    </g>
+    <!-- layer 2: A's inner walls (A is the FRONT piece, so its walls sit above B's) -->
+    <g class="upLeft">
+      <polygon class="edge" points="200,120 280,80 280,160 200,200"/>
+      <polygon class="edge" points="120,240 200,200 200,280 120,320"/>
+    </g>
+    <!-- layer 3: B body (bottom/lower-right) + TOP diamond + LEFT diamond -->
+    <g class="downRight">
+      <polygon class="edge" points="360,120 360,200 360,280 280,320 200,360 120,320 120,240 200,280 280,240 280,160 200,120 280,80"/>
+      <polygon class="dia" points="280,160 360,120 280,80 200,120"/>
+      <polygon class="dia" points="200,280 120,240 120,320 200,360"/>
+      <circle class="dot" cx="280" cy="120" r="10"/>
+      <circle class="dot" cx="160" cy="300" r="10"/>
+    </g>
+    <!-- layer 4: A body (top/upper-left) + MIDDLE diamond -->
+    <g class="upLeft">
+      <polygon class="edge" points="200,120 280,160 280,240 200,280 120,240 120,320 40,280 40,200 40,120 120,80 200,40 280,80"/>
+      <polygon class="dia" points="200,200 280,160 280,240 200,280"/>
+      <circle class="dot" cx="240" cy="220" r="10"/>
+    </g>
+  </g>
+</svg>
+
+</body>
+</html>

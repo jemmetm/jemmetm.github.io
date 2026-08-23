@@ -2569,3 +2569,31 @@ section {
     }
 }
 
+/* ---------- home page load-in intro ---------- */
+#intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#intro-overlay svg {
+    width: min(30vw, 350px);
+    height: auto;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#intro-overlay.intro-overlay--hide svg {
+    opacity: 0;
+}
+
+#intro-overlay.intro-overlay--hide {
+    opacity: 0;
+    pointer-events: none;
+}
+

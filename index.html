@@ -12,6 +12,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="intro-overlay">
+        <svg viewBox="-60 -20 560 450" width="700" height="563" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                #intro-overlay svg {
+                    --move-ease: cubic-bezier(0.4,0,0,1);
+                    overflow: visible;
+                }
+
+                @keyframes introStaggerLeft { to { transform: translate(0, 80px); } }
+                @keyframes introStaggerTop  { to { transform: translate(80px, -40px); } }
+                @keyframes introFadeIn      { from { opacity: 0; } to { opacity: 1; } }
+
+                #intro-overlay .hexagon    { animation: introFadeIn  1.0s var(--move-ease) 0.3s both; }
+                #intro-overlay .face-left  { animation: introStaggerLeft 1.0s var(--move-ease) 0.3s both; }
+                #intro-overlay .face-top   { animation: introStaggerTop  1.0s var(--move-ease) 0.3s both; }
+                #intro-overlay .dot-right  { animation: introFadeIn 1.0s var(--move-ease) 0.3s both; }
+                #intro-overlay .dot-left   { animation: introStaggerLeft 1.0s var(--move-ease) 0.3s both, introFadeIn 1.0s var(--move-ease) 0.3s both; }
+                #intro-overlay .dot-top    { animation: introStaggerTop  1.0s var(--move-ease) 0.3s both, introFadeIn 1.0s var(--move-ease) 0.3s both; }
+            </style>
+
+            <g class="scene1">
+                <polygon class="hexagon" points="200,40 360,120 360,280 200,360 40,280 40,120" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+
+                <polygon class="face-right" points="200,200 280,160 280,240 200,280" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+                <circle class="dot-right" cx="240" cy="220" r="10" fill="white" opacity="0"/>
+
+                <polygon class="face-left" points="120,160 200,200 200,280 120,240" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+                <circle class="dot-left" cx="160" cy="220" r="10" fill="white" opacity="0"/>
+
+                <polygon class="face-top" points="200,120 280,160 200,200 120,160" fill="none" stroke="white" stroke-width="6.75" stroke-linejoin="round"/>
+                <circle class="dot-top" cx="200" cy="160" r="10" fill="white" opacity="0"/>
+            </g>
+        </svg>
+    </div>
+    <script>
+        (function () {
+            var KEY = 'mcevIntroPlayed';
+            var overlay = document.getElementById('intro-overlay');
+            if (sessionStorage.getItem(KEY)) {
+                overlay.remove();
+            } else {
+                sessionStorage.setItem(KEY, '1');
+                setTimeout(function () {
+                    overlay.classList.add('intro-overlay--hide');
+                    overlay.addEventListener('transitionend', function () {
+                        overlay.remove();
+                    }, { once: true });
+                }, 1800);
+            }
+        })();
+    </script>
+
     <header class="header">
         <nav class="nav">
             <div class="nav__container">
